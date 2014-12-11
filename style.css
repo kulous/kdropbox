@@ -1,0 +1,25 @@
+body,html{
+	width:100%;
+	height:100%;
+	padding:0;
+	margin:0;
+}
+body{
+	font-family:Verdana;
+	background:#EEE;
+}
+#status{
+	padding:5px;
+}
+#dropzone{
+	border:1px solid white;
+	background:white;
+	height:300px;
+	width:300px;
+	border:1px dotted black;
+	opacity:.3;
+	margin:10px;
+}
+#dropzone:hover{
+	opacity:1;
+}
