@@ -6,8 +6,8 @@ A quick html5 file uploader
 Installation Instructions
 
 1. Download this repo 
- a. Download the zip on this page 
- b. git clone https://github.com/kulous/kdropbox.git
+ - a. Download the zip on this page 
+ - b. git clone https://github.com/kulous/kdropbox.git
 
 2. Place the contents of this directory in a folder served by a web server
 
