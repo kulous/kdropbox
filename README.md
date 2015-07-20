@@ -22,7 +22,8 @@ Notes:
 - Any files uploaded are publicly accessible if the $hash is known 
 - PHP Sendmail expects the linux `sendmail` application to be installed
 - This script will only send email if you server is set up to send email, PHP Sendmail simply calls the `sendmail` application 
-- 
+
+ 
 Operation 
 - When accessing the page, a unique identifier (hash) is created for you
 - All files uploaded are storedd in a directory of that hash, so noone can easily guess your hash to find your files
