@@ -3,7 +3,6 @@ function encode($number) {
 	return strtr(rtrim(base64_encode(pack('i', $number)), '='), '+/', '-_');
 }
 $hash = encode(date("U"));
-/* Edit the path below to ensure your final destination is correct */
 $final_destination = getcwd()."/d";
 
 /* make sure a folder exists */
