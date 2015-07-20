@@ -3,6 +3,8 @@ function encode($number) {
 	return strtr(rtrim(base64_encode(pack('i', $number)), '='), '+/', '-_');
 }
 $hash = encode(date("U"));
+/* Edit the path below to ensure your final destination is correct */
+$final_destination = '/var/www/html/dropbox';
 
 $max_upload = (int)(ini_get('upload_max_filesize'));
 $max_post = (int)(ini_get('post_max_size'));
@@ -10,13 +12,13 @@ $memory_limit = (int)(ini_get('memory_limit'));
 $upload_mb = min($max_upload, $max_post, $memory_limit);
 if (isset($_FILES['myFile'])) {
 	$hash = $_REQUEST['hash'];
-	if(!is_dir("d/$hash")){
-		mkdir("d/$hash");
+	if(!is_dir($final_destination."/d/".$hash)){
+		mkdir($final_destination."/d/".$hash);
 	}
 	$fileName = $_FILES['myFile']['name'];
-	if (!file_exists("d/$hash/$fileName")) {
-		$ok = move_uploaded_file($_FILES['myFile']['tmp_name'], "d/".$hash."/" . $_FILES['myFile']['name']);
-		echo $ok ? "$fileName uploaded to <a href='/dropbox/d/$hash/$fileName'>/dropbox/d/$hash/$fileName</a>" : "Uploading of $fileName failed";
+	if (!file_exists($final_destination."/d/".$hash."/".$fileName)) {
+		$ok = move_uploaded_file($_FILES['myFile']['tmp_name'], $final_destination."d/".$hash."/" . $_FILES['myFile']['name']);
+		echo $ok ? "$fileName uploaded to <a href='/d/$hash/$fileName'>$hash/$fileName</a>" : "Uploading of $fileName failed";
 	}
 	else{
 		echo "A file with the name '$fileName' already exists.";
