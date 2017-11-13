@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dropbox</title>
+        <link rel='stylesheet' type='text/css' href='style.css'/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="App.js"></script>
+</head>
+<body>
+<h1>Dropbox</h1>
+    <div>
+        <p>This page allows you to quickly upload files for local or remote use. You can drag and drop multiple files. All files are publicly available to anyone with the link and are purged nightly.</p>
+        <div id="dropzone">Drag & drop your file(s) here</div>
+        <ul id='status'></ul>
+        <form id='mailme' action='sendmail.php' method='post'>
+        You can have the links above emailed to you for future use.<br/>
+        Email: <input type='text' name='email'><br/>
+        <button type='button' onClick="App.sendmail()">Send Message</button>
+        </form>
+    </div>
+<script>
+        var myapp = App;
+        myapp.init();
+</script>
+
+</body>
+</html>
